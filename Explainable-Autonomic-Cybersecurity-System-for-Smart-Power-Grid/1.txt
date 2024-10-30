@@ -1,0 +1,48 @@
+Decision Tree Inference Process:
+
+if length_mean <= 1187.0:
+  class: normal
+else:  # if length_mean > 1187.0
+  if timestamp <= 91.59301376342773:
+    class: normal
+  else:  # if timestamp > 91.59301376342773
+    if length_range <= 109.0:
+      class: attack
+    else:  # if length_range > 109.0
+      if timestamp <= 118.07212829589844:
+        if length_mean <= 1474.9749755859375:
+          class: attack
+        else:  # if length_mean > 1474.9749755859375
+          class: attack
+      else:  # if timestamp > 118.07212829589844
+        if length_mean <= 1418.0499877929688:
+          if ttl_mean <= 63.97500038146973:
+            class: normal
+          else:  # if ttl_mean > 63.97500038146973
+            class: attack
+        else:  # if length_mean > 1418.0499877929688
+          if timestamp <= 120.77249908447266:
+            if timestamp <= 120.49948120117188:
+              class: attack
+            else:  # if timestamp > 120.49948120117188
+              class: attack
+          else:  # if timestamp > 120.77249908447266
+            class: normal
+
+Sample 0:
+Features: {'timestamp': 93.150989, 'length_mean': 1459.75, 'length_range': 1085, 'length_median': 1514.0, 'ttl_mean': 64.0, 'ttl_range': 0.0, 'ttl_median': 64.0, 'payload_length_mean': nan, 'payload_length_range': nan, 'payload_length_median': nan, 'most_freq_highest_layer': 1, 'most_freq_src_port': 0, 'most_freq_dst_port': 0, 'most_freq_protocol': 0, 'most_freq_tcp_flags': 3}
+Inference Steps:
+  Node 0:
+    Go to right child: length_mean > 1187.0
+  Node 2:
+    Go to right child: timestamp > 91.59301376342773
+  Node 4:
+    Go to right child: length_range > 109.0
+  Node 6:
+    Go to left child: timestamp <= 118.07212829589844
+  Node 7:
+    Go to left child: length_mean <= 1474.9749755859375
+  Leaf reached.
+
+Sample 10:
+Features: {'timestamp': 107.020714, 'length_mean': 1459.75, 'length_range': 1085, 'length_median': 1514.0, 'ttl_mean': 64.0, 'ttl_range': 0.0, 'ttl_median': 64.0, 'payload_length_mean': 1472.0, 'payload_length_range': 0.0, 'payload_length_median': 1472.0, 'most_freq_highest_layer': 1, 'most_freq_src_port': 0, 'most_freq_dst_port': 0, 'most_freq_protocol': 0, 'most_freq_tcp_flags': 3}

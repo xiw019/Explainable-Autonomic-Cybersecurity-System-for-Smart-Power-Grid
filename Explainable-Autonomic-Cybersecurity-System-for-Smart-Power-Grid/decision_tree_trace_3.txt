@@ -1,0 +1,23 @@
+Example Dataset Entry:
+All Feature Values: length_range                  0.0
+length_median              1514.0
+ttl_mean                     64.0
+ttl_range                     0.0
+ttl_median                   64.0
+payload_length_mean           0.0
+payload_length_range          0.0
+payload_length_median         0.0
+most_freq_highest_layer       0.0
+most_freq_src_port            0.0
+most_freq_dst_port            0.0
+most_freq_protocol            0.0
+most_freq_tcp_flags           3.0
+Name: 3886, dtype: float64
+Predicted Class: attack
+
+Trace along the tree:
+Node 0: Feature 'most_freq_protocol' <= 0.5
+Node 1: Feature 'length_range' <= 109.0
+Node 2: Feature 'payload_length_mean' <= 736.0
+
+Predicted Leaf Node: 3
