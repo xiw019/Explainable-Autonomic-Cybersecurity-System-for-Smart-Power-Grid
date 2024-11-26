@@ -26,9 +26,10 @@ from DT_explainer import DTExplainer
 ```python
 explainer = DTExplainer(trained_decision_tree_model)
 ```
- 
+### 3. Generate Explanations
+```
 explanations = explainer.explain(data_to_explain)
-
+```
 
 
 ## Explainer Setup & Usage
